@@ -1,0 +1,40 @@
+# Greeting card generator
+
+def generate_greeting_card():
+    # Taking user inputs
+    name = input("What is your name?\n").strip()
+    while not name:
+        print("Name cannot be empty. Please try again.")
+        name = input("What is your name?\n").strip()
+
+    occasion = input("What is the occasion?\n").strip()
+    while not occasion:
+        print("Occasion cannot be empty. Please try again.")
+        occasion = input("What is the occasion?\n").strip()
+
+    custom_message = input("Write a custom message\n").strip()
+    if not custom_message:
+        custom_message = "Have a wonderful day!"
+
+    # String manipulation
+    greeting = f"Dear {name},\n\nHappy {occasion}!\n{custom_message}\n\nBest wishes,\nThe Greeting Card Team"
+
+    # Display greeting
+    print("\nHere is your personalized greeting card:")
+    print("*" * 35)
+    print(greeting)
+    print("*" * 35)
+
+    # Ask if the user wants to save the card
+    save_option = input("Would you like to save this greeting card to a file? (yes/no)\n").strip().lower()
+    if save_option == "yes":
+        with open("greeting_card.txt", "w") as file:
+            file.write(greeting)
+        print("Your greeting card has been saved as 'greeting_card.txt'.")
+
+    # Collect feedback
+    feedback = input("\nWhat do you think of this message?\n")
+    print(f"Thank you for your feedback, {name}!")
+
+# Run the greeting card generator
+generate_greeting_card()
