@@ -1,1 +1,10 @@
+student_gpa = float(input("What is your GPA?"))
+if student_gpa <= 2:
+    Result = "Fail"
+elif student_gpa <= 3:
+    Result ="Cleared"
+elif student_gpa <=3.5:
+    Result = "Cleared with merit"
+else: Result = "Cleared with Distinction"
+print(f"STUDENT NAME: {name}, RESULT: {Result}")
 
